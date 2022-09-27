@@ -16,16 +16,22 @@ const Login = () => {
     console.log(user);
     try {
       const res = await axios.post("http://127.0.0.1:8080/userLogin", user);
+      console.log(res);
+
       if (res.data > 0) {
         alert(user.username + "  " + " Login Successfull !");
         dispatch({ type: LOAD_CURRENTUSER_SUCCESS, payload: res.data });
         navigate("/");
+      }
+      if (res.data === 0) {
+        alert("UserName or password wrong");
       }
     } catch (error) {
       alert(" Wrong UserName And Password  ");
       console.log(error);
     }
   };
+
   return (
     <div>
       <div className="container-fluid w-auto p-3 gradient">

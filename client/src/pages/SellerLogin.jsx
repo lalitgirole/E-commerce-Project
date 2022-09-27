@@ -24,6 +24,9 @@ const SellerLogin = () => {
 
         navigate("/sellerHome");
       }
+      if (res.data === 0) {
+        alert("Wrong username and password");
+      }
     } catch (error) {
       alert(" Wrong UserName And Password  ");
       console.log(error);

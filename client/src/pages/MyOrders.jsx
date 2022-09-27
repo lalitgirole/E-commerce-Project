@@ -9,7 +9,7 @@ import { AppContext } from "../context/AppContext";
 function MyOrders() {
   const [order, setOrder] = useState({});
 
-  const { entity, loading, dispatch, pageId } = useContext(AppContext);
+  const { entity, loading, dispatch, currentUser } = useContext(AppContext);
 
   const location = useLocation();
 
@@ -44,8 +44,11 @@ function MyOrders() {
     }
   };
 
+  console.log(currentUser);
+
   return (
     <div className="w-auto p-3">
+      {currentUser && "Hello"}
       <div className="w-auto p-3 gradient">
         <div class="card c2 container margin-top">
           <br />
