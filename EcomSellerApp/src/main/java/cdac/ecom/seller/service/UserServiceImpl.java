@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String saveUser(UserVM userVM) {
+    public int saveUser(UserVM userVM) {
         if(userVM.getUserPassword().equals(userVM.getConfirmPass())){
             UserMaster userMaster=new UserMaster();
             userMaster.setUserFirstName(userVM.getUserFirstName());
@@ -30,13 +30,10 @@ public class UserServiceImpl implements UserService {
             userMaster.setUserEmail(userVM.getUserEmail());
             userMaster.setUserMobile(userVM.getUserMobile());
             userRepo.save(userMaster);
-            return "User Saved";
+            return 200;
         }else {
-            return null;
+            return 1;
         }
-
-
-
     }
 
     @Override

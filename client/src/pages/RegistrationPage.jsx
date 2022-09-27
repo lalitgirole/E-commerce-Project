@@ -17,8 +17,11 @@ const RegistrationPage = () => {
     console.log(user);
     const res = await axios.post("http://127.0.0.1:8080/user", user);
 
-    if (res) {
+    if (res.data === 200) {
       navigation("/login");
+    }
+    if (res.data === 1) {
+      alert("both password shold match");
     }
   };
 

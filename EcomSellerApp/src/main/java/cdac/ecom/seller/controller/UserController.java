@@ -22,9 +22,9 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public String addUser(@RequestBody UserVM userVM){
-        userService.saveUser(userVM);
-        return "User Saved";
+    public int addUser(@RequestBody UserVM userVM){
+        int result =userService.saveUser(userVM);
+        return result;
     }
 
     @GetMapping("/user/{id}")

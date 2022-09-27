@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserService {
 
     public List<UserMaster> getAllUser();
-    public String saveUser(UserVM userVM);
+    public int saveUser(UserVM userVM);
     public UserMaster getUserById(Long userId);
     public String updateUser(Long id,UserVM userVM);
     public String deleteUser(Long id);
