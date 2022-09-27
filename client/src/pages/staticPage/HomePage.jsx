@@ -2,7 +2,7 @@ import React from "react";
 import "./homePage.css";
 import Carousel from "react-bootstrap/Carousel";
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 
 function HomePage() {
   const { dispatch, currentUser } = useContext(AppContext);

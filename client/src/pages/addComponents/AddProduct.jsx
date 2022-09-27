@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./addProduct.css";
 import axios from "axios";
-import FileUpload from "./FileUpload";
-import { AppContext } from "../context/AppContext";
-import { getCategory } from "../action/categoryActions";
-import { getSubCategory } from "../action/subcategoryAction";
+import FileUpload from "../FileUpload";
+import { AppContext } from "../../context/AppContext";
+import { getCategory } from "../../action/categoryActions";
+import { getSubCategory } from "../../action/subcategoryAction";
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {

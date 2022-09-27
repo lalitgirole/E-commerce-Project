@@ -1,8 +1,8 @@
 import "./addProduct.css";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../context/AppContext";
-import { getCategory } from "../action/categoryActions";
+import { AppContext } from "../../context/AppContext";
+import { getCategory } from "../../action/categoryActions";
 import { useNavigate } from "react-router-dom";
 
 const AddCategory = () => {

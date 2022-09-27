@@ -3,8 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./registration.css";
 import axios from "axios";
 import { AlertContainer, alert } from "react-custom-alert";
-import { getProduct } from "../action/productAction";
-import { AppContext } from "../context/AppContext";
+import { getProduct } from "../../action/productAction";
+import { AppContext } from "../../context/AppContext";
 
 function MyOrders() {
   const buyerId = localStorage.getItem("userId");
