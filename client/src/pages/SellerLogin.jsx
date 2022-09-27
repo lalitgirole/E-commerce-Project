@@ -21,6 +21,7 @@ const SellerLogin = () => {
       if (res.data > 0) {
         dispatch({ type: LOAD_CURRENTUSER_SUCCESS, payload: user.username });
         alert(user.username + "  " + " Login Successfull !");
+        localStorage.setItem("userId", res.data);
 
         navigate("/sellerHome");
       }

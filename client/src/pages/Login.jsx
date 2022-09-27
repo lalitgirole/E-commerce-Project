@@ -21,6 +21,7 @@ const Login = () => {
       if (res.data > 0) {
         alert(user.username + "  " + " Login Successfull !");
         dispatch({ type: LOAD_CURRENTUSER_SUCCESS, payload: res.data });
+        localStorage.setItem("userId", res.data);
         navigate("/");
       }
       if (res.data === 0) {

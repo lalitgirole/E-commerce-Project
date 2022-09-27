@@ -22,14 +22,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String saveUser(UserVM userVM) {
-        UserMaster userMaster=new UserMaster();
-        userMaster.setUserFirstName(userVM.getUserFirstName());
-        userMaster.setUserLastName(userVM.getUserLastName());
-        userMaster.setUserPassword(userVM.getUserPassword());
-        userMaster.setUserEmail(userVM.getUserEmail());
-        userMaster.setUserMobile(userVM.getUserMobile());
-        userRepo.save(userMaster);
-        return "User Saved";
+        if(userVM.getUserPassword().equals(userVM.getConfirmPass())){
+            UserMaster userMaster=new UserMaster();
+            userMaster.setUserFirstName(userVM.getUserFirstName());
+            userMaster.setUserLastName(userVM.getUserLastName());
+            userMaster.setUserPassword(userVM.getUserPassword());
+            userMaster.setUserEmail(userVM.getUserEmail());
+            userMaster.setUserMobile(userVM.getUserMobile());
+            userRepo.save(userMaster);
+            return "User Saved";
+        }else {
+            return null;
+        }
+
+
+
     }
 
     @Override

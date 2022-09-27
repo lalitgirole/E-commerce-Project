@@ -7,6 +7,8 @@ import { getProduct } from "../action/productAction";
 import { AppContext } from "../context/AppContext";
 
 function MyOrders() {
+  const buyerId = localStorage.getItem("userId");
+
   const [order, setOrder] = useState({});
 
   const { entity, loading, dispatch, currentUser } = useContext(AppContext);
@@ -28,8 +30,10 @@ function MyOrders() {
       ...prev,
       [fieldName]: fieldValue,
       productId: location.state.productId,
+      userId: buyerId,
     }));
   };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(order);
@@ -43,6 +47,8 @@ function MyOrders() {
       alert("Something went wrong.. try again !");
     }
   };
+
+  console.log(currentUser);
 
   console.log(currentUser);
 
@@ -116,11 +122,12 @@ function MyOrders() {
             <div class="form-group">
               <label for="userId">user Id</label>
               <input
-                type="tel"
+                type="hidden"
                 class="form-control"
                 id="userId"
                 placeholder="Enter User Id"
                 name="userId"
+                value={buyerId}
                 onChange={(e) => handleChange(e.target.id, e.target.value)}
                 required
               />

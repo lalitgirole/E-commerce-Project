@@ -47,7 +47,7 @@ const AddCategory = () => {
     e.preventDefault();
     console.log(subCategory);
     const res = await axios.post(
-      "http://127.0.0.1:9999/subCategory",
+      "http://127.0.0.1:8080/subCategory",
       subCategory
     );
     if (res) {

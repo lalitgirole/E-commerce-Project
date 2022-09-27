@@ -39,6 +39,7 @@ import { EditAddress } from "./EditAddress";
 import { EditSeller } from "./EditSeller";
 import { EditUser } from "./EditUser";
 import DisplayProduct from "../component/GetComponent/DisplayProduct";
+import GetAllProductSeller from "../component/GetComponent/GetAllProductSeller";
 
 const AppRoutes = () => {
   return (
@@ -258,7 +259,7 @@ const AppRoutes = () => {
             path="sellerHome"
             element={
               <RouterSellerComponent>
-                <SellerMain />
+                <GetAllProductSeller />
               </RouterSellerComponent>
             }
           />
