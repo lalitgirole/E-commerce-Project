@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./addProduct.css";
+import "./addingFunction/addProduct.css";
 import axios from "axios";
 import FileUpload from "./FileUpload";
 import { AppContext } from "../context/AppContext";
