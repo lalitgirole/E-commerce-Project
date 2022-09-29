@@ -21,9 +21,9 @@ public class SellerController {
     }
 
     @PostMapping("/seller")
-    public String saveSeller( @RequestBody  SellerVM sellerVM){
-        sellerService.saveSeller(sellerVM);
-        return "Seller Saved";
+    public int saveSeller( @RequestBody  SellerVM sellerVM){
+       int result= sellerService.saveSeller(sellerVM);
+        return result;
     }
 
     @GetMapping("/seller/{id}")

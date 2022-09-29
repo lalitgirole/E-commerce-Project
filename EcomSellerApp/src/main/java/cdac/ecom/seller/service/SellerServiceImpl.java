@@ -23,15 +23,20 @@ public class SellerServiceImpl implements SellerService {
     }
 
     @Override
-    public String saveSeller(SellerVM sellerVM) {
-       SellerMaster sellerMaster=new SellerMaster();
-       sellerMaster.setSellerFirstName(sellerVM.getSellerFirstName());
-       sellerMaster.setSellerLastName(sellerVM.getSellerLastName());
-       sellerMaster.setSellerEmail(sellerVM.getSellerEmail());
-       sellerMaster.setSellerPassword(sellerVM.getSellerPassword());
-       sellerMaster.setSellerMobileNumber(sellerVM.getSellerMobileNumber());
-       sellerRepo.save(sellerMaster);
-        return "Saved Seller";
+    public int saveSeller(SellerVM sellerVM) {
+        if(sellerVM.getSellerPassword().equals(sellerVM.getConfirmPass())){
+            SellerMaster sellerMaster=new SellerMaster();
+            sellerMaster.setSellerFirstName(sellerVM.getSellerFirstName());
+            sellerMaster.setSellerLastName(sellerVM.getSellerLastName());
+            sellerMaster.setSellerEmail(sellerVM.getSellerEmail());
+            sellerMaster.setSellerPassword(sellerVM.getSellerPassword());
+            sellerMaster.setSellerMobileNumber(sellerVM.getSellerMobileNumber());
+            sellerRepo.save(sellerMaster);
+            return 200;
+        }else {
+            return 1;
+        }
+
     }
 
     @Override

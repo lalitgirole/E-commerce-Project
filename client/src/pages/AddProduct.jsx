@@ -52,7 +52,7 @@ const AddProduct = () => {
     const res = await axios.post("http://127.0.0.1:8080/product", product);
     console.log("This is Response " + res);
     if (res) {
-      navigate("/displayProduct");
+      navigate("/sellerHome");
       alert(
         "\nProduct Name : " +
           product.productName +
