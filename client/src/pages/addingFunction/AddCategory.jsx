@@ -17,6 +17,7 @@ const AddCategory = () => {
 
   useEffect(() => {
     loadCategory();
+    onsubmit();
   }, []);
 
   const loadCategory = async () => {
@@ -41,6 +42,10 @@ const AddCategory = () => {
     e.preventDefault();
     console.log(category);
     const res = await axios.post("http://127.0.0.1:9999/category", category);
+
+    if (res) {
+      navigate("/addCategory");
+    }
   };
 
   const onSubmitSub = async (e) => {
