@@ -3,10 +3,9 @@ import { deleteEntity } from "../../action/commonAction";
 import { getProduct } from "../../action/productAction";
 import "./allProduct.css";
 import { AppContext } from "../../context/AppContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { LOAD_PAGEID_SUCCESS } from "../../constants/ApplicationTypes";
-import { getCategory } from "../../action/categoryActions";
 // import Loader from "../loader/Loader";
 
 const GetAllProductSeller = () => {
@@ -52,21 +51,8 @@ const GetAllProductSeller = () => {
     entity.product.filter((id) => id.sellerMaster.sellerId == currentSellerId)
   );
 
-  useEffect(() => {
-    loadCategory();
-  }, []);
-
-  const loadCategory = async () => {
-    await getCategory("category", dispatch);
-  };
-
   const loadProduct = async () => {
     await getProduct("product", dispatch);
-  };
-
-  const byCategory = (id) => {
-    console.log(id);
-    // navigate("/byCategory", { state: { catId: id } });
   };
 
   console.log(entity);
@@ -132,6 +118,13 @@ const GetAllProductSeller = () => {
       </table> */}
 
       <div class="cards12">
+        <div>
+          <div>Find By Category</div>
+          <select name="" id="">
+            <option value="">Select</option>
+          </select>
+        </div>
+
         {entity.product.length > 0 &&
           entity.product
             .filter((id) => id.sellerMaster.sellerId == currentSellerId)

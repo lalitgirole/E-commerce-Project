@@ -1,20 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ManageCategory from "./../component/ManageCategory";
-import ManageProduct from "./../component/ManageProduct";
-import PlaceOrder from "./../component/PlaceOrder";
-import OrderList from "./../component/OrderList";
-import OrderDetail from "./../component/OrderDetail";
-import Sidebar from "./Sidebar";
 import RouteComponent from "../component/RouteComponent";
-import BuyerMain from "./BuyerMain";
 import Shop from "./Shop";
 import OurStory from "./OurStory";
 import Contact from "./Contact";
-import YourCart from "./YourCart";
+
 import MyOrders from "./MyOrders";
 import Login from "./Login";
 import RegistrationPage from "./RegistrationPage";
-import SellerMain from "./SellerMain";
+
 import HomePage from "./HomePage";
 import RouteComponentLoginPage from "../component/RouteComponentLoginPage";
 import AddProduct from "./AddProduct";
@@ -89,14 +82,7 @@ const AppRoutes = () => {
               </RouteComponent>
             }
           />
-          <Route
-            path="yourCart"
-            element={
-              <RouteComponent>
-                <YourCart />
-              </RouteComponent>
-            }
-          />
+
           <Route
             path="myOrders"
             element={
@@ -133,7 +119,7 @@ const AppRoutes = () => {
             path="displaySellerProduct"
             element={
               <RouteComponentSellerLoginPage>
-                <GetAllProduct/>
+                <GetAllProduct />
               </RouteComponentSellerLoginPage>
             }
           />
@@ -213,7 +199,7 @@ const AppRoutes = () => {
             path="editProduct"
             element={
               <RouteComponentLoginPage>
-                <EditProduct/>
+                <EditProduct />
               </RouteComponentLoginPage>
             }
           />
@@ -249,21 +235,20 @@ const AppRoutes = () => {
               </RouteComponentLoginPage>
             }
           />
-          <Route 
-          path="displayAllSellerOrder"
-          element={
-            <RouteComponentSellerLoginPage>
-              <GetAllOrderForSeller/>
-            </RouteComponentSellerLoginPage>
-          }>
-
-          </Route>
+          <Route
+            path="displayAllSellerOrder"
+            element={
+              <RouteComponentSellerLoginPage>
+                <GetAllOrderForSeller />
+              </RouteComponentSellerLoginPage>
+            }
+          ></Route>
 
           <Route
             path="displaySellerProducts"
             element={
               <RouteComponentSellerLoginPage>
-                <DisplaySellerProductDetails/>
+                <DisplaySellerProductDetails />
               </RouteComponentSellerLoginPage>
             }
           />
@@ -308,7 +293,7 @@ const AppRoutes = () => {
               </RouteComponentSellerLoginPage>
             }
           />
-          
+
           <Route
             path="registration"
             element={
@@ -333,9 +318,7 @@ const AppRoutes = () => {
               </RouteComponentSellerLoginPage>
             }
           />
-          
         </Route>
-       
       </Routes>
     </BrowserRouter>
   );

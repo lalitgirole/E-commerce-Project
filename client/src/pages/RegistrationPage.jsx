@@ -32,7 +32,7 @@ const RegistrationPage = () => {
     if (userCurrentEmail.length === 0) {
       const res = await axios.post("http://127.0.0.1:9999/user", user);
       if (res.data === 200) {
-        alert("SuccessFully Registered")
+        alert("SuccessFully Registered");
         navigation("/login");
       }
       if (res.data === 1) {
@@ -84,6 +84,9 @@ const RegistrationPage = () => {
                 id="userMobile"
                 placeholder="Mobile Number"
                 name="userMobile"
+                minLength="10"
+                maxLength="10"
+                pattern="[0-9]"
                 onChange={(e) => handleChange(e.target.id, e.target.value)}
                 required
               />
